@@ -1,0 +1,303 @@
+.billboard {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 1;
+
+    .billboard-row {
+        position: relative;
+        top: 0; left: 0; right: 0;
+
+        touch-action: pan-y;
+        margin-bottom: 20px;
+        padding-top: 56.25vw;
+
+        .swiper-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            .swiper-wrapper {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                .swiper-slide {
+                    position: relative;
+                }
+            }
+        }
+
+        .billboard-pane {
+            position: absolute;
+            width: 100%;
+            height: 56.25vw;
+            z-index: 0;
+
+            .vignette-layer {
+                position: absolute;
+                left: 0; right: 0;
+                z-index: 8;
+            }
+
+            .image-layer {
+                z-index: 5;
+            }
+
+            .video-container {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+
+                video.theatr-trailer {
+                    opacity: 0;
+                    transition: opacity 1s;
+
+                    video.vjs-tech {
+                        outline: 0;
+                        z-index: 11;
+                    }
+                }
+
+                .theatr-trailer.playing {
+                    opacity: 1;
+                }
+            }
+
+            .image-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                .static-img {
+                    position: absolute;
+                    background-position: center center;
+                    background-size: cover;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    z-index: 1;
+                    opacity: 1;
+                    transition: opacity .4s cubic-bezier(.665, .235, .265, .8) 0s;
+                    border: 0;
+                }
+
+                .trailer-vignette {
+                    background: linear-gradient(77deg, rgba(0, 0, 0, .6) 0, rgba(0, 0, 0, 0) 85%);
+                    top: 0;
+                    right: 26.09%;
+                    bottom: 0;
+                    opacity: 1;
+                    transition: opacity .5s;
+                }
+
+                .image-vignette {
+                    position: absolute;
+                    background-image: linear-gradient(to bottom, rgba(20, 20, 20, 0) 0, rgba(20, 20, 20, .15) 15%, rgba(20, 20, 20, .35) 29%, rgba(20, 20, 20, .58) 44%, #141414 68%, #141414 100%);
+                    background-size: 100% 100%;
+                    background-position: 0 top;
+                    background-repeat: repeat-x;
+                    background-color: transparent;
+                    width: 100%;
+                    height: 14.7vw;
+                    z-index: 2;
+                    top: auto;
+                    bottom: -1px;
+                    opacity: 1;
+                }
+            }
+
+            .fill-container {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+
+                width: 100%;
+                height: 100%;
+
+                .info {
+                    position: absolute;
+                    top: 0;
+                    bottom: 35%;
+                    left: 4%;
+                    width: 30%;
+                    z-index: 10;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+
+                    .logo-and-text {
+                        width: 100%;
+
+                        .title-wrapper {
+                            .billboard-title {
+                                position: relative;
+                                min-height: 13.2vw;
+                                margin-bottom: 1.2vw;
+
+                                img.title-logo {
+                                    width: 100%;
+                                    font-size: 2vw;
+                                    font-weight: 700;
+                                    transition: opacity 1s, transform 1s;
+                                    transform: translateY(-10%);
+                                }
+                            }
+                        }
+
+                        .info-wrapper {
+                            font-size: 1.2vw;
+                            text-shadow: rgb(0, 0, 0) 2px 2px 4px;
+
+                            .episode-title-container {}
+
+                            div.synopsis-container {
+                                transition: opacity 1s, transform 1s;
+                                transform: translateX(-8%);
+
+                                div.synopsis {
+                                    margin: .5vw 0 0 0;
+                                }
+                            }
+                        }
+
+                        .billboard-links {
+                            margin-top: 1.5vw;
+                            display: flex;
+
+                            transition: opacity 1s, transform 1s;
+                            transform: translateX(-12%);
+
+                            button {
+                                cursor: pointer;
+                                font-size: 16px;
+                                border: 1px solid;
+                                border-radius: 4px;
+                                outline: none;
+                                width: 5em;
+                                height: 2em;
+                                margin-right: 8px;
+                            }
+
+                            button.btn-play {
+                                background: red;
+                                color: white;
+                                border-color: red;
+                            }
+
+                            button.btn-info {
+                                background: lightgray;
+                                color: black;
+                                border-color: lightgray;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.untranslate {
+    transform: translate(0) !important;
+}
+
+.with-billboard {
+    top: -12.5vw;
+}
+
+.lolomo-container {
+    width: 100%;
+}
+
+.lom-rowcontainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    div.lom-row {
+        position: relative;
+        margin: 1vw 0;
+        z-index: 1;
+        padding: 0;
+
+        h3.title,
+        .title h3 {
+            line-height: 1.5em;
+            margin: 0 0 .5em 0;
+            margin-left: 4%;
+        }
+
+        .swiper-container {
+            position: relative;
+            margin: 0;
+            padding: 0 4%;
+            touch-action: pan-y;
+
+            .swiper-wrapper {
+                overflow-x: visible;
+                padding-bottom: 1px;
+
+                .swiper-slide {}
+            }
+
+            .swiper-button-prev {
+                left: 0;
+                border-radius: 0 4px 4px 0;
+                opacity: 0;
+            }
+
+            .swiper-button-next {
+                right: 0;
+                border-radius: 4px 0 0 4px;
+                opacity: 0;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                position: absolute;
+                height: 100%;
+                width: 4%;
+                z-index: 1;
+                background: rgb(14, 14, 14);
+                transition: opacity 0.1s;
+                color: white;
+                z-index: 2;
+            }
+
+            .swiper-button-prev:hover,
+            .swiper-button-next:hover {
+                background: rgb(14, 14, 14);
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.opaque {
+    opacity: 1;
+}
+
+.translucent {
+    opacity: 0;
+}
